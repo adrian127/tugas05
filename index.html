@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+
+        <a class="navbar-brand" href="#">Adrian Yonam</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#">Portfolio</a>
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Contact</a>
+            </div>
+        </div>
+
+    </nav>
+
+
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container text-center">
+
+            <h1 class="display-4">ADRIAN YONAM LOVARI MINGGU</h1>
+            <p>Mahasiswa Teknik Informatika - D121181505 </p>
+
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h1>Pemanfaatan Context Free Grammar
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p> RCFG atau Context Free Grammar adalah tata bahasa formal di mana setiap aturan produksi adalah dalam bentuk A → B di mana A adalah pemproduksi, dan B adalah hasil produksi. Batasannya hanyalah ruas kiri adalah sebuah simbol variabel. Dan
+                    pada ruas kanan bisa berupa terminal, symbol, variable ataupun ɛ, Contoh aturan produksi yang termasuk CFG adalah seperti berikut ini: </p>
+                <p><img src="img/1.png" width="200"></p>
+                <p> CFG adalah tata bahasa yang mempunyai tujuan sama seperti halnya tata bahasa regular yaitu merupakan suatu cara untuk menunjukkan bagaimana menghasilkan suatu untai-untai dalam sebuah bahasa.</p>
+                <p> CFG perlu disederhankan dengan tujuan untuk melakukan pembatasan sehingga tidak menghasilkan pohon penurunan yang memiliki kerumitan yang tak perlu atau aturan produksi tak berarti. Berikut merupakan langkah-langkah dalam melakukan penyederhanaan
+                    CFG:
+                </p>
+                <P> Eliminasi ɛ-production,Eliminasi unit production,Eliminasi useless symbol</P>
+
+
+
+
+
+
+
+            </div>
+            <div class="col">
+                <p> Proses penurunan / parsing bisa dilakukan dengan cara sebagai berikut:</p>
+                <p>
+                    <h6>- Penurunan terkiri (leftmost derivation): simbol variabel terkiri yang di perluas terlebih dahulu.</h6>
+                    <h6> - Penurunan terkanan ( rightmost derivation ) : simbol variabel terkanan yang diperluas terlebih dahulu.</h6>
+                </p>
+
+                <p>Misal : Grammar sbb :</p>
+                <p>
+                    <h6>- S → aAS | a</h6>
+                </p>
+                <p>
+                    <h6>- A → SbA | ba</h6>
+                </p>
+                <p> Untuk memperoleh string ‘aabbaa’ dari grammar diatas dilakukan dengan cara :</p>
+                <p>
+                    <h6>- Penurunan terkiri: S => aAS => aSbAS => aabAS => aabbaS => aabbaa</h6>
+                </p>
+                <p>
+                    <h6>- Penurunan terkanan : S => aAS => aAa => aSbAa => aAbbaa => aabbaa</h6>
+                </p>
+                <p>Contoh Lain:</p>
+                <p>Diketahui grammar G = {I → H | I H | IA, H → a| b | c | … |z, A → 0 | 1 | 2| …|9} dengan I adalah simbol awal.Berikut ini kedua cara analisa sintaks untuk string x23b.</p>
+                <p><img src="img/2.png" width="300"></p>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h1>Berikut contoh Penyederhanaan CFG:
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>
+                    <h6>A → cAB | ab</h6>
+                    <h6>B → BaC| C</h6>
+                    <h6>C → bC| ɛ</h6>
+                </p>
+                <p>
+                    <h5>Step 1 – Eliminasi ɛ-production</h5>
+                </p>
+                <p>- Hilangkan semua hasil produksi yang ɛ - Jika X → ɛ, maka X adalah nullable - Jika Y → X, maka Y adalah nullable - Jika Z → Xa, maka Z → a</p>
+                <p>Result :</p>
+                <p>A → cAB | ab | cA B → BaC| C | Ba | aC | a C → bC| b</p>
+
+
+
+            </div>
+            <div class="col">
+                <p>
+                    <h5>Step 2 – Eliminasi unit production
+                    </h5>
+                </p>
+                <p>Jika ada hasil produksi yang terdiri dari 1 variable, maka hasil produksi tersebut disubstitusi dengan hasil produksi dari grammar dimana variable tersebut menjadi pemproduksiResult :</p>
+                <p>A → cAB | ab | cA B → BaC| bC | b | Ba | aC | a C → bC| b</p>
+                <p>
+                    <h5>Step 3 – Eliminasi useless symbol</h5>
+                </p>
+                <p>- Uji Generate Jika X → YZ, Y → aa, Z → b, maka X,Y,Z lolos uji generate Jika M → PQ, P → aa, Q → QQ, maka M dan Q tidak lolos uji generate
+                </p>
+                <p> Uji Reachable Jika S → TU dimana S adalah start symbol maka T dan U lolos uji reachable</p>
+                <p>Final Result :</p>
+                <p>A → cAB | ab | cA B → BaC| bC | b | Ba | aC | a C → bC| b</p>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h1>Parsing
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>Context Free Grammar ( CFG ) menjadi dasar dalam pembentukan suatu parser/proses analisis sintaksis. Bagian sintaks dalam suatu kompilator kebanyakan di definisikan dalam tata bahasa bebas konteks. Pohon penurunan ( derivation tree/parse
+                    tree) berguna untuk menggambarkan simbol-simbol variabel menjadi simbol-simbol terminal setiap simbol variabel akan di turunkan menjadi terminal sampai tidak ada yang belum tergantikan</p>
